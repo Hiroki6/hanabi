@@ -36,5 +36,6 @@ public:
 
     float color_decision;//花火の色の決定変数
     bool flash_flag;//花火が大きくなった時に光ったかのフラグ(１回だけ光る)
+    bool finish_flag; // 花火が既に終わったかどうかのフラグ
     ofSoundPlayer hanabiSound; //ofSoundクラスをインスタンス化(花火の音)
 };

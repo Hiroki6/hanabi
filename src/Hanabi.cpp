@@ -33,6 +33,7 @@ void Hanabi::setup(float x, float y, int scaledVol){
     balance = 0;
     //光ったかのフラグ
     flash_flag = true;
+    finish_flag = false;
 
 }
 
@@ -73,6 +74,7 @@ void Hanabi::update(float scaleVol){
         }else{
             pos[i].pos.x = -999;
             pos[i].pos.y = -999;
+            finish_flag = true;
 
         }
         

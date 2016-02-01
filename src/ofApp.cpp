@@ -24,6 +24,7 @@ void ofApp::setup(){
     //mySound.play(); //サウンド再生開始
 }
 
+
 //--------------------------------------------------------------
 void ofApp::update(){
     //scaledVol = ofMap(smoothedVol, 0.0, 0.17, 0.0, 1.0, true);
@@ -47,7 +48,12 @@ void ofApp::update(){
     ofRect(0, 0, ofGetWidth(), ofGetHeight());
     
     for(int i = 0; i < hanabi.size(); i++){
-        hanabi[i].update(radius[i]);
+        // 花火が終わっていたら、削除
+        if(hanabi[i].finish_flag){
+            hanabi.erase(hanabi.begin()+i);
+        }else{
+            hanabi[i].update(radius[i]);
+        }
     }
 
 }
